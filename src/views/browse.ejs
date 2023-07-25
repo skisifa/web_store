@@ -8,7 +8,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet">
-
+    <script
+    src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+    crossorigin="anonymous"
+  ></script>
   <title>Cyborg</title>
 
   <!-- Bootstrap core CSS -->
@@ -108,21 +112,23 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <h4 class=""><em>Type any Game</em> On Epic</h4>
                   </div>
                   <div class="search col-lg-6 col-sm-12">
-                    <input placeholder="Search here" type="text">
-                    <button>GO</button>
+                    <form id="go" method="get">
+                      <input placeholder="Search here" id="search" type="text" value="">
+                    <button type="submit">GO</button>
+                    </form>
                   </div>
                 </div>
                 <div class="row">
                   <%items.forEach((item)=>{%>
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                      <div class="clickable item">
+                      <div class="item">
                         <div class="discount">
                           <%=item.discount%>
                         </div>
-                        <div class="newPrice">
-                          <%=item.newPrice%>
+                        <div id="newprice" class='<%=(item.newPrice == "Comming Soon") ? "comming" : "newPrice" %>'>
+                          <%=(item.newPrice == "Comming Soon") ? "Comming Soon" : item.newPrice %>
                         </div>
-                        <div class="oldPrice" style="text-decoration: line-through">
+                        <div id="oldprice" class="oldPrice" style="text-decoration: line-through">
                           <%=item.oldPrice%>
                         </div>
                         <img src="<%=item.image%>" alt="" />
@@ -151,6 +157,33 @@ https://templatemo.com/tm-579-cyborg-gaming
                           <li><a id="pagedzb" class="particle" role="button" href="/browse?page=<%=lastPage%>&count=40" "><%=lastPage%></a></li>
                           <li><a id="nextPage" class="particle" role="button" ">></a></li>
                         </ul>
+                        <script>
+                          $(".item").on("click",function(){
+                            let title = $(this).find(".details h4").text();
+                            let new_price = $(this).find("#newprice").text();
+                            let text = `I want this game ${title}, price: ${new_price}`;
+
+                            let urlEncodedText = encodeURIComponent(text.replace(/\s+/g," ").trim());
+
+                            // The specific number to send the message to
+                            let phoneNumber = "<%=phoneNumber%>";
+                            // Redirect to WhatsApp
+                            window.location.href = `https://wa.me/${phoneNumber}?text=${urlEncodedText}`;
+                          })
+
+                          $("#go").on("submit",function(e){
+                          e.preventDefault();
+                          let search = $("#search").val().trim();
+                          if(search != "" && search != " " && search !="   "){
+
+                            window.open(`/browse?search=${search}`,"_self");
+                          }
+                          else{
+                            window.open(`/browse`,"_self");
+                          }
+                  
+                        });
+                        </script>
                         <script>
                           window.onload = function () {
                             let links = document.querySelectorAll('.arrow .particle');
@@ -216,31 +249,6 @@ https://templatemo.com/tm-579-cyborg-gaming
                             // Step 7: Navigate to the new URL.
                             window.location.href = nextHref;
                           });
-
-
-                          document.addEventListener('DOMContentLoaded', (event) => {
-                            let clickableDiv = document.querySelector('.clickable');
-
-                            if (clickableDiv != null) {
-                              clickableDiv.style.cursor = 'pointer';
-
-                              clickableDiv.onclick = (e) => {
-                                let gameTitle = clickableDiv.querySelector('.details h4').textContent;
-                                let gamePrice = clickableDiv.querySelector('.newPrice').textContent;
-                                
-                                gameTitle = gameTitle.replace(/\s+/g,' ').trim();
-                                gamePrice = gamePrice.replace(/\s+/g,' ').trim();
-                                let text = `I want this game ${gameTitle}, price: ${gamePrice}`;
-
-                                let urlEncodedText = encodeURIComponent(text);
-
-                                // The specific number to send the message to
-                                let phoneNumber = "212708337594";
-                                // Redirect to WhatsApp
-                                window.location.href = `https://wa.me/212708337594?text=${urlEncodedText}`;
-                              };
-                            }
-                          });
                         </script>
                         <!-- added by raheem end-->
                       </div>
@@ -257,7 +265,7 @@ https://templatemo.com/tm-579-cyborg-gaming
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2036 by <a href="#">Colda Studio</a> Agency. All rights reserved.
+          <p>Copyright © 2036 by <a href="https://discord.gg/CFWnYcmZFK">Colda Studio</a> Agency. All rights reserved.
 
             <br>
           </p>

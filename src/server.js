@@ -8,7 +8,7 @@ const cron = require("node-cron");
 const router = require("./routes/epic.js");
 const game = require("./routes/game.js");
 const gift = require("./routes/gift.js");
-
+const panel = require("./routes/panel.js");
 
 const app = express();
 const PORT = process.env.PORT || 5544;
@@ -37,6 +37,7 @@ app.set('view engine', 'ejs');
 app.use("/",router);
 app.use("/",game);
 app.use("/",gift);
+app.use("/",panel);
 
 
 app.get("/",(req,res)=>{
