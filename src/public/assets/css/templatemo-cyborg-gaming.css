@@ -25,15 +25,70 @@ font & reset css
 --------------------------------------------- 
 */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
+
 /* 
 ---------------------------------------------
 reset
 --------------------------------------------- 
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
-pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
-s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-figure, header, nav, section, article, aside, footer, figcaption {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+div pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+figure,
+header,
+nav,
+section,
+article,
+aside,
+footer,
+figcaption {
   margin: 0;
   padding: 0;
   border: 0;
@@ -61,13 +116,20 @@ html[xmlns] .clearfix {
   height: 1%;
 }
 
-ul, li {
+ul,
+li {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-header, nav, section, article, aside, footer, hgroup {
+header,
+nav,
+section,
+article,
+aside,
+footer,
+hgroup {
   display: block;
 }
 
@@ -75,7 +137,8 @@ header, nav, section, article, aside, footer, hgroup {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   background-color: #1e1e1e;
@@ -86,14 +149,20 @@ html, body {
 }
 
 a {
-	color: #CCC;
+  color: #CCC;
   text-decoration: none !important;
 }
+
 a:hover {
-	color: #F99;
+  color: #F99;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0px;
   margin-bottom: 0px;
   color: #fff;
@@ -110,10 +179,10 @@ p {
   color: #fff;
 }
 
-img {
+/* img {
   width: 100%;
   overflow: hidden;
-}
+} */
 
 /* 
 ---------------------------------------------
@@ -148,8 +217,8 @@ p {
 }
 
 .templatemo-item {
-	max-width: 80px; 
-	border-radius: 23px;
+  max-width: 80px;
+  border-radius: 23px;
 }
 
 .main-button a {
@@ -166,10 +235,11 @@ p {
   position: relative;
   overflow: hidden;
 }
-.particle{
+
+.particle {
   font-size: 14px;
   color: #fff;
-  background:transparent;
+  background: transparent;
   padding: 12px 10px;
   display: inline-block;
   border-radius: 5px;
@@ -181,15 +251,16 @@ p {
   overflow: hidden;
 }
 
-.clickable{
+.clickable {
   cursor: pointer;
 }
-.particle:hover{
+
+.particle:hover {
   background-color: #0d00ff31;
   color: white;
 }
 
-.particle.active{
+.particle.active {
   background-color: #0d00ff63;
   color: white;
 }
@@ -226,7 +297,7 @@ p {
   color: #666;
 }
 
-.border-no-active a:hover{
+.border-no-active a:hover {
   border-color: #666;
   color: #666;
   background-color: transparent;
@@ -260,7 +331,7 @@ Pre-loader Style
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.99);
+  background-color: rgba(0, 0, 0, 0.99);
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -282,29 +353,29 @@ Pre-loader Style
 
 @-webkit-keyframes dot {
   50% {
-      -webkit-transform: translateX(96px);
-      transform: translateX(96px);
+    -webkit-transform: translateX(96px);
+    transform: translateX(96px);
   }
 }
 
 @keyframes dot {
   50% {
-      -webkit-transform: translateX(96px);
-      transform: translateX(96px);
+    -webkit-transform: translateX(96px);
+    transform: translateX(96px);
   }
 }
 
 @-webkit-keyframes dots {
   50% {
-      -webkit-transform: translateX(-31px);
-      transform: translateX(-31px);
+    -webkit-transform: translateX(-31px);
+    transform: translateX(-31px);
   }
 }
 
 @keyframes dots {
   50% {
-      -webkit-transform: translateX(-31px);
-      transform: translateX(-31px);
+    -webkit-transform: translateX(-31px);
+    transform: translateX(-31px);
   }
 }
 
@@ -357,26 +428,44 @@ Added by Raheem
 */
 
 body::-webkit-scrollbar {
-  width: 8px;               /* width of the entire scrollbar */
+  width: 8px;
+  /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: #7300ff0e;        /* color of the tracking area */
+  background: #7300ff0e;
+  /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #7400FF;    /* color of the scroll thumb */
+  background-color: #7400FF;
+  /* color of the scroll thumb */
   border-radius: 1px;
 }
-.prices{
+
+.prices {
   display: flex;
   flex-direction: row;
   position: relative;
   background: transparent;
 }
-.item{
+
+.comming {
+  position: absolute;
+  background: #f00000;
+  border: none;
+  font-size: 19px;
+  padding: 5px 10px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 0 15px black;
+  border-radius: 0 0 10px 0px;
+}
+
+.item {
   position: relative;
 }
+
 .item .newPrice {
   right: 0;
   bottom: 28px;
@@ -389,32 +478,70 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-.search{
+.search {
   text-align: center;
   margin-bottom: 30px;
   position: relative;
 }
 
-.search input{
-    height: 40px;
-    color: rgba(255, 255, 255, 0.928);
-    width: 80%;
-    position: absolute;
-    padding: 0 10px;
-    right: 10%;
-    background: #10268d40;
-    border: 1px #1c2587 solid;
-    border-radius: 5px;
+.search input {
+  height: 40px;
+  color: rgba(255, 255, 255, 0.928);
+  width: 80%;
+  position: absolute;
+  padding: 0 10px;
+  right: 10%;
+  background: #10268d40;
+  border: 1px #1c2587 solid;
+  border-radius: 5px;
 }
 
+.login input {
+  height: 40px;
+  color: rgba(255, 255, 255, 0.928);
+  padding: 10px 10px;
+  margin: 10px 0;
+  right: 10%;
+  display: flex;
+  background: #10268d40;
+  border: 1px #1c2587 solid;
+  border-radius: 5px;
+}
 
-.searchBar{
+.loginButton {
+  cursor: pointer;
+  background: linear-gradient(323deg, #06004c, #080809, black);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  height: 40px;
+  border: 0.5px #3444f869 solid;
+  width: 90px;
+}
+
+.login {
+  padding: 30px 30px;
+  border-radius: 5px;
+  border: 0.5px #3444f869 solid;
+  box-shadow: 0 0 15px #2501ee52;
+}
+
+.loginForm {
+  padding-top: 5%;
+}
+
+input[type='checkbox']:checked {
+  accent-color: #0dcaf0;
+}
+
+.searchBar {
   position: relative;
   margin-bottom: 20px;
 }
-.search button{
+
+.search button {
   cursor: pointer;
-  background: linear-gradient(323deg, #06004c , #080809, black );
+  background: linear-gradient(323deg, #06004c, #080809, black);
   color: white;
   border-radius: 0 5px 5px 0;
   right: 10%;
@@ -423,7 +550,8 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   width: 90px;
 }
-.search button:hover{
+
+.search button:hover {
   background: transparent;
 }
 
@@ -437,29 +565,129 @@ body::-webkit-scrollbar-thumb {
   text-shadow: 0 0 15px #000000;
 }
 
-.item .discount{
+.item .discount {
   position: absolute;
   text-shadow: 2px 2px 20px #000000;
   font-size: 22px;
   padding-left: 8px;
-  font-weight: bold!important;
+  font-weight: bold !important;
   border-radius: 0 0 7px;
   padding-right: 15px;
   background: red;
   position: absolute;
   color: white !important;
 }
-.details{
+
+.details {
   display: flex;
   flex-direction: column;
   height: 60px;
 }
-.arrow{
+
+.arrow {
   padding-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.admin {
+  color: white;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  font-weight: 200;
+}
+
+.engine {
+  color: white;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  font-weight: 200;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.control {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.adder {
+  width: 35%;
+  padding: 30px 30px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 0.5px #3444f869 solid;
+  box-shadow: 0 0 15px #2501ee52;
+}
+
+.adder input {
+  height: 40px;
+  color: rgba(255, 255, 255, 0.928);
+  padding: 10px 10px;
+  margin: 10px 0;
+  right: 10%;
+  width: 100%;
+  display: flex;
+  background: #10268d40;
+  border: 1px #1c2587 solid;
+  border-radius: 5px;
+}
+
+.box2 {
+  width: 504px;
+  height: 82px;
+  left: 161px;
+  background: rgba(7.72, 0, 96.44, 0.20);
+  border-radius: 5px;
+  border: 0.50px #5C006B solid;
+  position: absolute;
+}
+
+.box3 {
+  width: 244px;
+  height: 82px;
+  position: absolute;
+  border-radius: 5px;
+  border: 1px white solid;
+}
+
+.text {
+  width: 80px;
+  position: absolute;
+  text-align: center;
+  color: white;
+  font: 400 1.5em/1.2em Inter;
+  word-wrap: break-word;
+}
+
+.product-image {
+  width: 421px;
+  height: 632px;
+  left: 1099px;
+  top: 177px;
+  position: absolute;
+  border-radius: 8px;
+}
+
+.header {
+  left: 131px;
+  position: absolute;
+  color: white;
+  font: 400 2em/1.2em Inter;
+  word-wrap: break-word;
+}
+
 /* 
 ---------------------------------------------
 Header Style
@@ -468,13 +696,13 @@ Header Style
 
 .background-header {
   background-color: #000 !important;
-  height: 70px!important;
-  position: fixed!important;
-  top: 0!important;
+  height: 70px !important;
+  position: fixed !important;
+  top: 0 !important;
   left: 0;
   border: 1px #3444F8 solid;
   right: 0;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.15)!important;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
@@ -606,7 +834,7 @@ Header Style
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: #7400FF!important;
+  color: #7400FF !important;
 }
 
 
@@ -750,6 +978,7 @@ Header Style
     padding-left: 10px;
     padding-right: 10px;
   }
+
   .header-area .main-nav:before {
     display: none;
   }
@@ -759,38 +988,47 @@ Header Style
   .header-area {
     top: 0;
   }
+
   .header-area .main-nav {
     background-color: transparent;
     border-radius: 0px;
   }
+
   .header-area .main-nav .nav {
     height: auto;
     flex-basis: 100%;
   }
+
   .header-area .main-nav .logo {
     position: absolute;
     left: 30px;
     top: 15px;
   }
+
   .background-header .main-nav .logo {
     top: 0px;
   }
+
   .background-header .main-nav .border-button {
     top: 0px !important;
   }
+
   .header-area .main-nav .border-button {
     position: absolute;
     top: 15px;
     right: 70px;
   }
+
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color: #0e00ff!important;
+    color: #0e00ff !important;
     opacity: 1;
   }
+
   .header-area.header-sticky .nav li.search-icon a {
     width: 100%;
   }
+
   .header-area {
     background-color: #000000;
     padding: 0px 15px;
@@ -798,18 +1036,23 @@ Header Style
     box-shadow: none;
     text-align: center;
   }
+
   .header-area .container {
     padding: 0px;
   }
+
   .header-area .logo {
     margin-left: 0px;
   }
+
   .header-area .menu-trigger {
     display: block !important;
   }
+
   .header-area .main-nav {
     overflow: hidden;
   }
+
   .header-area .main-nav .nav {
     float: none;
     width: 100%;
@@ -820,16 +1063,20 @@ Header Style
     transition: all 0s ease 0s;
     margin-left: 0px;
   }
+
   .header-area.header-sticky .nav {
     margin-top: 65px !important;
     text-align: center;
   }
+
   .background-header.header-sticky .nav {
     margin-top: 70px !important;
   }
+
   .header-area .main-nav .nav li:first-child {
     border-top: 1px solid #eee;
   }
+
   .header-area .main-nav .nav li {
     width: 100%;
     background: #fff;
@@ -837,6 +1084,7 @@ Header Style
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
+
   .header-area .main-nav .nav li a {
     height: 50px !important;
     line-height: 50px !important;
@@ -845,17 +1093,21 @@ Header Style
     background: #fff !important;
     color: #1e1e1e !important;
   }
+
   .header-area .main-nav .nav li a:hover {
     background: #fff !important;
-    color: #e8f8ff!important;
+    color: #e8f8ff !important;
   }
+
   .header-area .main-nav .nav li:last-child a img {
     display: none;
   }
+
   .header-area .main-nav .nav li:last-child a:hover {
     color: #ec6090 !important;
     background-color: transparent !important;
   }
+
   .header-area .main-nav .nav li.has-sub ul.sub-menu {
     position: relative;
     visibility: inherit;
@@ -868,23 +1120,29 @@ Header Style
     height: 0px;
     transition: all 0s;
   }
+
   .header-area .main-nav .nav li.submenu ul li a {
     font-size: 12px;
     font-weight: 400;
   }
+
   .header-area .main-nav .nav li.submenu ul li a:hover:before {
     width: 0px;
   }
+
   .header-area .main-nav .nav li.has-sub ul.sub-menu {
     height: auto;
   }
+
   .header-area .main-nav .nav li.has-sub:after {
     color: #3B566E;
     right: 30px;
     font-size: 14px;
     top: 15px;
   }
-  .header-area .main-nav .nav li.submenu:hover ul, .header-area .main-nav .nav li.submenu:focus ul {
+
+  .header-area .main-nav .nav li.submenu:hover ul,
+  .header-area .main-nav .nav li.submenu:focus ul {
     height: 0px;
   }
 }
@@ -938,7 +1196,7 @@ Most Popular Style
 
 .most-popular .item {
   cursor: pointer;
-  background: linear-gradient(323deg, #06004c , #080809, black );
+  background: linear-gradient(323deg, #06004c, #080809, black);
   border: 0.50px #3444F8 solid;
   padding: 10px 10px;
   margin-bottom: 30px;
@@ -1126,7 +1384,7 @@ Featured Games Style
 }
 
 .featured-games .item .thumb .hover-effect h6 {
-  background-color: rgba(31,33,34,0.95);
+  background-color: rgba(31, 33, 34, 0.95);
   display: inline-block;
   color: #ec6090;
   font-weight: 600;
@@ -1188,7 +1446,7 @@ Featured Games Style
 }
 
 .featured-games .owl-nav .owl-prev span,
-.featured-games .owl-nav .owl-next span  {
+.featured-games .owl-nav .owl-next span {
   font-size: 36px;
   display: inline-block;
   color: #666;
@@ -1260,7 +1518,7 @@ Featured Games Style
   padding-bottom: 28px;
 }
 
-.top-downloaded .text-button  {
+.top-downloaded .text-button {
   text-align: center;
 }
 
@@ -1324,7 +1582,7 @@ Live Stream Style
 }
 
 .live-stream .thumb img {
-  border-radius: 23px; 
+  border-radius: 23px;
 }
 
 .live-stream .thumb:hover .hover-effect {
@@ -1338,7 +1596,7 @@ Live Stream Style
   transition: all .4s;
 }
 
-.live-stream .hover-effect .live a { 
+.live-stream .hover-effect .live a {
   position: absolute;
   background-color: rgba(236, 96, 144, 0.9);
   padding: 5px 10px;
@@ -1413,7 +1671,8 @@ Featured Banner Style
   position: relative;
   max-height: 305px;
   overflow: hidden;
-  border-radius: 23px;;
+  border-radius: 23px;
+  ;
 }
 
 .feature-banner .thumb a {
@@ -1513,7 +1772,7 @@ Game Details Style
 
 .game-details .content .right-info ul li:first-child i {
   color: yellow;
-} 
+}
 
 .game-details .content .right-info ul li i {
   color: #ec6090;
@@ -1526,7 +1785,7 @@ Game Details Style
 .game-details .main-border-button a {
   text-align: center;
   width: 100%;
-} 
+}
 
 /* 
 ---------------------------------------------
@@ -1720,7 +1979,7 @@ Profile Style
   margin-top: 30px;
 }
 
-.clips .item  {
+.clips .item {
   border-radius: 23px;
   padding: 30px 15px;
   background-color: #27292a;
@@ -1734,17 +1993,17 @@ Profile Style
 
 .clips .item .thumb a {
   position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-23px, -23px);
-    width: 46px;
-    height: 46px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    line-height: 46px;
-    color: #ec6090;
+  left: 50%;
+  top: 50%;
+  transform: translate(-23px, -23px);
+  width: 46px;
+  height: 46px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 46px;
+  color: #ec6090;
 }
 
 .clips .item h4 {
@@ -1781,50 +2040,72 @@ body {
   body .page-content {
     padding: 0px 30px;
   }
+
+  .engine{
+    flex-direction: column;
+  }
+
+  .adder{
+    width: 100%;
+  }
+  .loginForm {
+    padding-top: 25%;
+  }
+
   .main-banner {
     box-shadow: 0 0 15px #480051;
     text-align: center;
   }
+
   .main-banner h4 {
     font-weight: 700;
     font-size: 27px;
     width: 100%;
     text-shadow: 0 0 15px black;
   }
+
   .gaming-library .item ul li,
   .gaming-library .item ul li:first-child,
   .gaming-library .item ul li:last-child {
     width: 100% !important;
     text-align: center !important;
   }
+
   .gaming-library .item ul li {
     margin-top: 30px;
   }
+
   .top-downloaded ul li .download i {
     top: 20px;
     width: 30px;
     height: 30px;
     line-height: 30px;
   }
+
   .top-downloaded ul li img {
     margin-right: 10px;
   }
+
   .top-downloaded ul li span {
     font-size: 14px;
   }
+
   .top-streamers ul li .main-button {
     float: none;
     margin-top: 10px;
   }
+
   .top-streamers ul li .main-button a {
     width: 100%;
     text-align: center;
   }
+
   .top-streamers,
   .top-downloaded {
     max-height: 100%;
     min-height: 100%;
   }
+
   .most-popular .item .inner-item {
     margin-bottom: 20px;
   }
@@ -1834,37 +2115,48 @@ body {
   .main-banner {
     background-image: url(../images/banner-big.jpg);
   }
+
   .background-header {
-  display: inline-block;
+    display: inline-block;
   }
+
   .searchBar {
     margin-bottom: 30px;
   }
+
   .search input {
     left: 10%;
   }
+
   .header-area .main-nav #search {
     display: none;
   }
+
   .heading-section h4 {
     text-align: center;
     font-size: 20px;
   }
+
   .gaming-library .item ul li {
     width: 48% !important;
   }
+
   .gaming-library .item ul li:last-child {
     text-align: left;
   }
+
   .featured-games {
     margin-bottom: 60px;
   }
+
   .start-stream .item {
     margin: 15px 0px;
   }
+
   .feature-banner .thumb {
     margin-top: 30px;
   }
+
   .main-profile .main-info {
     margin: 45px 0px;
   }
@@ -1875,10 +2167,12 @@ body {
     padding-right: 5px;
     padding-left: 5px;
   }
+
   .header-area .main-nav .logo {
     margin-right: 30px;
     border-right: none;
   }
+
   .gaming-library .item ul li {
     width: 16%;
   }
