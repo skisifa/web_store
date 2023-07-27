@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="./assets/css/owl.css?_cacheOverride=1689776815627" />
     <link rel="stylesheet" href="./assets/css/animate.css?_cacheOverride=1689776815627" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css?_cacheOverride=1689776815628" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -43,54 +45,59 @@
                         <h2 style="margin-bottom: 10px;">Add new product :</h2>
                         <span style="padding: 15px 0;"></span>
                         <label for="uname"><b>Product title</b></label>
-                        <input type="text" placeholder="Title here" name="uname" required="">
+                        <input id="title" type="text" placeholder="Title here" name="uname" required>
                         <span style="padding: 5px 0;"></span>
 
                         <label for="uname"><b>Product image</b></label>
-                        <input type="text" placeholder="Link to the image" name="uname" required="">
+                        <input id="imglink" type="text" placeholder="Link to the image" name="uname" required>
                         <span style="padding: 5px 0;"></span>
 
                         <div class="" style="display: flex;">
                             <div class="" style="padding-right: 5px;">
                                 <label for="uname"><b>New price</b></label>
-                            <input type="text" placeholder="Current price" name="uname" required>
-                            <span style="padding: 5px 0;"></span>
+                                <input id="newprice" type="text" placeholder="Current price" name="uname" required>
+                                <span style="padding: 5px 0;"></span>
                             </div>
                             <div class="" style="padding-left: 5px;">
                                 <label for="uname"><b>Old price</b></label>
-                            <input type="text" placeholder="previous price" name="uname" required>
-                            <span style="padding: 5px 0;"></span>
+                                <input id="oldprice" type="text" placeholder="previous price" name="uname" required>
+                                <span style="padding: 5px 0;"></span>
                             </div>
 
                         </div>
                         <label style="padding-bottom: 15px;" class="control">
-                            <button style="border: 0.5px #f83434 solid; width: 45%;" class="loginButton" type="submit">Cancel</button>
-                            <button style="border: 0.5px #59ff00 solid; width: 45%;" class="loginButton" type="submit">Preview</button>
+                            <button id="btnreset" style="border: 0.5px #f83434 solid; width: 45%;" class="loginButton"
+                                type="button">Cancel</button>
+                            <button id="preview" style="border: 0.5px #59ff00 solid; width: 45%;" class="loginButton"
+                                type="button">Preview</button>
                         </label>
 
                         <label for="uname"><b>Add this Product to :</b></label>
                         <label class="control">
-                            <button style="height: 50px; border: 1px #00d0ff solid; width: 45%;" class="loginButton" type="submit">Gift cards</button>
-                            <button style="height: 50px; border: 1px #ff00b7 solid; width: 45%;" class="loginButton" type="submit">Valorant Acc</button>
+                            <button id="sgift" style="height: 50px; border: 1px #00d0ff solid; width: 45%;" class="loginButton"
+                                type="button">Gift cards</button>
+                            <button id="saccount" style="height: 50px; border: 1px #ff00b7 solid; width: 45%;" class="loginButton"
+                                type="button">Valorant Acc</button>
                         </label>
 
 
                     </div>
                     <div class="adder col-xl-3 col-lg-4 col-md-6 col-sm-12">
                         <div class="item">
-                            <div class="discount">
+                            <div id="ddis" class="discount">
                                 -50%
                             </div>
-                            <div class="newPrice">
+                            <div id="dnewp" class="newPrice">
                                 $14.99
                             </div>
-                            <div class="oldPrice" style="text-decoration: line-through">
+                            <div id="doldp" class="oldPrice" style="text-decoration: line-through">
                                 $29.99
                             </div>
-                            <img src="https://cdn1.epicgames.com/0584d2013f0149a791e7b9bad0eec102/offer/GTAV_EGS_Artwork_1200x1600_Portrait Store Banner-1200x1600-382243057711adf80322ed2aeea42191.jpg?h=480&amp;quality=medium&amp;resize=1&amp;w=360"
+                            <img id="dimg"
+                                src="https://cdn1.epicgames.com/0584d2013f0149a791e7b9bad0eec102/offer/GTAV_EGS_Artwork_1200x1600_Portrait Store Banner-1200x1600-382243057711adf80322ed2aeea42191.jpg?h=480&amp;quality=medium&amp;resize=1&amp;w=360"
                                 alt="" style="width: 100%;">
                             <div class="details">
-                                <p style="width: 60%;color: white;">
+                                <p id="dtitle" style="width: 60%;color: white;">
                                     Grand Theft Auto V: Premium Edition
                                 </p>
                             </div>
@@ -110,7 +117,8 @@
             </div>
         </footer>
 
-        <!-- Scripts -->
+
+
         <!-- Bootstrap core JavaScript -->
         <script src="./vendor/jquery/jquery.min.js"></script>
         <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -120,6 +128,79 @@
         <script src="./assets/js/tabs.js"></script>
         <script src="./assets/js/popup.js"></script>
         <script src="./assets/js/custom.js"></script>
+        <!-- Scripts -->
+        <script>
+            $("#sgift").on("click", function () {
+                let title = $("#title").val();
+                let imgLink = $("#imglink").val();
+                let newPrice = $("#newprice").val();
+                let oldPrice = $("#oldprice").val();
+                let discount = "";
+                newPrice = Number(newPrice);
+                oldPrice = Number(oldPrice);
+                if (oldPrice > newPrice) {
+                    discount = ""+Math.floor(((newPrice - oldPrice) / oldPrice) * 100) +"%";
+                }
+                $.ajax({
+                    url: '/gift',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({title,image:imgLink,newPrice,oldPrice,discount}),
+                    success: function (info) {
+                        if(info.OK){
+                            window.location.reload();
+                        }
+                    }
+                });
+            });
+            $("#saccount").on("click", function () {
+                let title = $("#title").val();
+                let imgLink = $("#imglink").val();
+                let newPrice = $("#newprice").val();
+                let oldPrice = $("#oldprice").val();
+                let discount = "";
+                newPrice = Number(newPrice);
+                oldPrice = Number(oldPrice);
+                if (oldPrice > newPrice) {
+                    discount = ""+Math.floor(((newPrice - oldPrice) / oldPrice) * 100) +"%";
+                }
+                $.ajax({
+                    url: '/account',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({title,image:imgLink,newPrice,oldPrice,discount}),
+                    success: function (info) {
+                        if(info.OK){
+                            window.location.reload();
+                        }
+                    }
+                });
+            });
+            $("#btnreset").on("click", function () {
+                window.open("/panel", "_self");
+            });
+            $("#preview").on("click", function (event) {
+                // event.preventDefault();
+                let title = $("#title").val();
+                let imgLink = $("#imglink").val();
+                let newPrice = $("#newprice").val();
+                let oldPrice = $("#oldprice").val();
+
+                $("#dtitle").text(title);
+                $("#dnewp").text(newPrice);
+                $("#doldp").text(oldPrice);
+
+                $("#dimg").attr("src", imgLink);
+
+                if (Number(oldPrice) > Number(newPrice)) {
+                    let clac_dis = Math.floor(((newPrice - oldPrice) / oldPrice) * 100);
+                    $("#ddis").text(`${clac_dis}%`);
+                }
+                else {
+                    $("#ddis").text("");
+                }
+            });
+        </script>
 </body>
 
 </html>
